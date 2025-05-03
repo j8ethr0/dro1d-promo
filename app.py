@@ -16,9 +16,6 @@ def get_db_connection():
     except psycopg2.Error as e:
         print(f"Database connection error in get_db_connection: {e}")
         return None
-    finally:
-        if conn:
-            conn.close() # Close immediately after getting the connection for this test
 
 def init_db():
     conn = get_db_connection()
@@ -50,10 +47,6 @@ def initdb_command():
     """Initializes the database."""
     init_db()
     print("Initialized the database via command.")
-
-@app.route("/")
-def hello():
-    return "Hello from Railway!"
 
 @app.route("/<app_name>")
 def promo_page(app_name):
@@ -107,4 +100,4 @@ def mark_used():
         return jsonify({"success": False, "error": f"Database error in mark_used: {e}"}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
