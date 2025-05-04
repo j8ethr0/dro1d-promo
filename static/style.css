@@ -18,13 +18,14 @@ body {
 
 .promo-container {
   background: #1e1e1e;
-  border: 1px solid #333;
+  border: 1px solid #2a2a2a;
   border-radius: 16px;
   padding: 40px;
   max-width: 900px;
   width: 100%;
   text-align: center;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(145deg, #1c1c1c, #222);
 }
 
 .logo-box img {
@@ -33,8 +34,8 @@ body {
   object-fit: contain;
   margin-bottom: 30px;
   border-radius: 50%;
-  border: 2px solid #00c2ff;
-  box-shadow: 0 4px 10px rgba(0, 194, 255, 0.3);
+  border: 2px solid #4CAF50; /* Modern green accent */
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
 }
 
 h1 {
@@ -43,6 +44,7 @@ h1 {
   margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  text-shadow: 0 1px 3px rgba(0, 194, 255, 0.2);
 }
 
 .codes-box {
@@ -59,44 +61,57 @@ h1 {
   font-size: 18px;
   color: #ffffff;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid #00c2ff;
-  box-shadow: 0 3px 8px rgba(0, 194, 255, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.code-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #4CAF50, #ff7043); /* Green to Orange */
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
 }
 
 .code-card:hover {
   background: #333;
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 194, 255, 0.2);
+  box-shadow: 0 6px 12px rgba(255, 112, 67, 0.2); /* Muted orange shadow */
 }
 
 .code-card.used {
   background: #3a3a3a;
   color: #999;
-  border-color: #555;
+  border: 2px dashed #666;
   text-decoration: line-through;
   cursor: not-allowed;
   box-shadow: none;
 }
 
-.code-card.used:hover {
-  transform: none;
-}
-
 .use-button {
-  background-color: #00c2ff;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
   padding: 12px 18px;
   cursor: pointer;
   border-radius: 6px;
   font-size: 15px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
   margin-top: 12px;
+  box-shadow: 0 3px 6px rgba(76, 175, 80, 0.3);
 }
 
 .use-button:hover {
-  background-color: #009dcf;
+  background: linear-gradient(to right, #43a047, #66bb6a);
 }
 
 .notification {
@@ -117,7 +132,7 @@ h1 {
 .notification.error {
   background-color: #3f1f1f;
   color: #f3a4a4;
-  border: 1px solid #f44336;
+  border: 1px solid #ff7043;
 }
 
 /* Responsive tweaks */
