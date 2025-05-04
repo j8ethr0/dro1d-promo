@@ -1,22 +1,23 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #121212;
+  background: #0a0a0a;
   color: #e0e0e0;
+  margin: 0;
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
-  padding: 40px 20px;
 }
 
 .promo-container {
-  background: #1e1e1e;
-  border-radius: 16px;
+  background: #111;
+  border-radius: 14px;
   padding: 40px;
   max-width: 900px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.1);
 }
 
 .logo-box img {
@@ -25,12 +26,11 @@ body {
   object-fit: contain;
   margin-bottom: 30px;
   border-radius: 50%;
-  border: 2px solid #ffa726; /* orange accent */
-  box-shadow: 0 0 10px rgba(255, 167, 38, 0.2);
+  border: 1px solid #00ff99;
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 26px;
   color: #ffffff;
   margin-bottom: 30px;
   font-weight: 600;
@@ -39,69 +39,36 @@ h1 {
 
 .codes-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
   justify-items: center;
 }
 
 .code-card {
-  padding: 16px;
-  background: #2a2a2a;
-  border: 1px solid #ffa726; /* subtle orange */
-  border-radius: 10px;
-  font-size: 18px;
+  background: transparent;
+  border: 1px solid #00ff99;
+  border-radius: 8px;
+  padding: 12px 10px;
   color: #ffffff;
+  font-size: 16px;
+  text-align: center;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 160px;
 }
 
 .code-card:hover {
-  background: #333;
+  background: rgba(0, 255, 153, 0.1);
   transform: scale(1.03);
 }
 
 .code-card.used {
-  background: #444;
-  color: #999;
-  border: 1px dashed #666;
+  background: #222;
+  color: #888;
+  border: 1px dashed #555;
   text-decoration: line-through;
   cursor: not-allowed;
-}
-
-.use-button {
-  background-color: #ffa726;
-  color: #fff;
-  border: none;
-  padding: 10px 16px;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 15px;
-  margin-top: 12px;
-  transition: background 0.3s ease;
-}
-
-.use-button:hover {
-  background-color: #ff9800;
-}
-
-.notification {
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.notification.success {
-  background-color: #2e4d2f;
-  color: #a4f3b7;
-  border: 1px solid #4caf50;
-}
-
-.notification.error {
-  background-color: #4d2e2e;
-  color: #f3a4a4;
-  border: 1px solid #ff7043;
 }
 
 @media (max-width: 600px) {
@@ -109,16 +76,24 @@ h1 {
     padding: 25px;
   }
 
-  h1 {
-    font-size: 22px;
-  }
-
-  .codes-box {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-
   .code-card {
-    font-size: 16px;
-    padding: 12px;
+    font-size: 14px;
+    padding: 10px;
   }
+}
+
+.use-button {
+  background-color: #00ff99;
+  color: #000;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 12px;
+  transition: background 0.3s ease;
+}
+
+.use-button:hover {
+  background-color: #00e68a;
 }
