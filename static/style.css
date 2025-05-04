@@ -1,31 +1,22 @@
-/* Reset default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #121212;
   color: #e0e0e0;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   padding: 40px 20px;
 }
 
 .promo-container {
   background: #1e1e1e;
-  border: 1px solid #2a2a2a;
   border-radius: 16px;
   padding: 40px;
   max-width: 900px;
   width: 100%;
   text-align: center;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(145deg, #1c1c1c, #222);
 }
 
 .logo-box img {
@@ -34,17 +25,16 @@ body {
   object-fit: contain;
   margin-bottom: 30px;
   border-radius: 50%;
-  border: 2px solid #4CAF50; /* Modern green accent */
-  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+  border: 2px solid #ffa726; /* orange accent */
+  box-shadow: 0 0 10px rgba(255, 167, 38, 0.2);
 }
 
 h1 {
-  font-size: 32px;
-  color: #00c2ff;
+  font-size: 28px;
+  color: #ffffff;
   margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-shadow: 0 1px 3px rgba(0, 194, 255, 0.2);
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .codes-box {
@@ -55,63 +45,43 @@ h1 {
 }
 
 .code-card {
-  padding: 18px;
-  background: #292929;
+  padding: 16px;
+  background: #2a2a2a;
+  border: 1px solid #ffa726; /* subtle orange */
   border-radius: 10px;
   font-size: 18px;
   color: #ffffff;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border: 2px solid transparent;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-
-.code-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(135deg, #4CAF50, #ff7043); /* Green to Orange */
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: 0;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .code-card:hover {
   background: #333;
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(255, 112, 67, 0.2); /* Muted orange shadow */
+  transform: scale(1.03);
 }
 
 .code-card.used {
-  background: #3a3a3a;
+  background: #444;
   color: #999;
-  border: 2px dashed #666;
+  border: 1px dashed #666;
   text-decoration: line-through;
   cursor: not-allowed;
-  box-shadow: none;
 }
 
 .use-button {
-  background-color: #4CAF50;
+  background-color: #ffa726;
   color: #fff;
   border: none;
-  padding: 12px 18px;
+  padding: 10px 16px;
   cursor: pointer;
   border-radius: 6px;
   font-size: 15px;
-  transition: background 0.3s ease;
   margin-top: 12px;
-  box-shadow: 0 3px 6px rgba(76, 175, 80, 0.3);
+  transition: background 0.3s ease;
 }
 
 .use-button:hover {
-  background: linear-gradient(to right, #43a047, #66bb6a);
+  background-color: #ff9800;
 }
 
 .notification {
@@ -120,34 +90,31 @@ h1 {
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .notification.success {
-  background-color: #1f3f2c;
+  background-color: #2e4d2f;
   color: #a4f3b7;
   border: 1px solid #4caf50;
 }
 
 .notification.error {
-  background-color: #3f1f1f;
+  background-color: #4d2e2e;
   color: #f3a4a4;
   border: 1px solid #ff7043;
 }
 
-/* Responsive tweaks */
 @media (max-width: 600px) {
   .promo-container {
     padding: 25px;
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .codes-box {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
   }
 
   .code-card {
